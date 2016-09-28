@@ -12,8 +12,7 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, AuthorizesResources, DispatchesJobs, ValidatesRequests;
     var $foo;
-    public function __construct($foo)
-    {
+    public function __construct($foo) {
         $this->foo = $foo;
     }
 
