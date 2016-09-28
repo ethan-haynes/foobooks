@@ -10,7 +10,9 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+use Foobooks\Http\Controllers\Controller;
 
 Route::get('/', function () {
-    return view('welcome');
+    $name = new Controller("Bob");
+    return view('welcome', ['name' => $name->getFoo()]);
 });
