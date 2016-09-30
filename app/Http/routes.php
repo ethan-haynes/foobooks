@@ -12,7 +12,10 @@
 */
 use Foobooks\Http\Controllers\Controller;
 
-Route::get('/', function () {
-    $name = new Controller("Bob");
-    return view('welcome', ['name' => $name->getFoo()]);
-});
+Route::any('/', function () {
+
+    return view('welcome', ['name' => "bob", 'link' => 'books']);
+})->name('');
+
+# test for working with POST routing
+Route::post('/books', 'BookController@index')->name('books');

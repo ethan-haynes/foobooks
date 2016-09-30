@@ -40,6 +40,17 @@
             <div class="content">
                 <div class="title">Laravel 5</div>
                 Hello, {{ $name }}.
+
+                <form method="POST" action="{{ $link }}">
+                    {{ csrf_field() }}
+                    <input type="radio" name="name" value="y">
+                    <input type="submit" name="submit" value="submit">
+                </form>
+                <?php
+                    $generator = new Badcow\LoremIpsum\Generator();
+                    $paragraphs = $generator->getParagraphs(5);
+                    echo implode('<p>', $paragraphs);
+                ?>
             </div>
         </div>
     </body>
